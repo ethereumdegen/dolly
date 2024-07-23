@@ -1,3 +1,4 @@
+use bevy_reflect::Reflect;
 use bevy_transform::prelude::Transform;
 
 use crate::driver::{RigDriver, RigDriverTraits};
@@ -5,7 +6,7 @@ use core::fmt::Debug;
 //use std::marker::PhantomData;
 
 /// A chain of drivers, calculating displacements, and animating in succession.
-#[derive(Debug)]
+#[derive(Debug, Reflect)]
 pub struct CameraRig {
     ///
     pub drivers: Vec<Box<dyn RigDriverTraits>>,
